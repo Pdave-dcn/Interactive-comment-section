@@ -60,9 +60,9 @@ function createCommentElement(comment, username) {
   commentElement.innerHTML = `
   <div class="comment-element">
     <div class="score">
-      <img src="images/icon-plus.svg" alt="icon-plus" />
+      <img class="plus-btn" src="images/icon-plus.svg" alt="icon-plus" />
       <span>${comment.score}</span>
-      <img src="images/icon-minus.svg" alt="icon-minus" />
+      <img class="minus-btn" src="images/icon-minus.svg" alt="icon-minus" />
     </div>
     <div>
       <div class="user-info">
@@ -88,7 +88,7 @@ function displayUser(userData) {
   <div class="current-user">
     <img src="${userData.image.png}" alt="${userData.username}" />
     <textarea name="user-comment-input" id="user-comment-input" placeholder="Add comment..."></textarea>
-    <input type="submit" value="SEND"></input>
+    <button class="send-btn">SEND</button>
   </div>
   `;
 }

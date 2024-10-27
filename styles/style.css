@@ -41,6 +41,10 @@ body .comment-section {
   border-radius: 10px;
   height: 90%;
 }
+.comments-container .comment .comment-element .score .plus-btn:hover,
+.comments-container .comment .comment-element .score .minus-btn:hover {
+  filter: brightness(0) saturate(100%) invert(37%) sepia(99%) saturate(452%) hue-rotate(198deg) brightness(92%) contrast(102%);
+}
 .comments-container .comment .comment-element .user-info {
   display: flex;
   align-items: center;
@@ -74,6 +78,12 @@ body .comment-section {
   font-weight: 700;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
 }
+.comments-container .comment .comment-element .user-info .reply-btn button:hover {
+  opacity: 70%;
+}
+.comments-container .comment .comment-element .user-info .reply-btn button:active {
+  opacity: 45%;
+}
 .comments-container .comment .comment-element .user-info .reply-btn button img {
   width: 10px;
   height: 10px;
@@ -92,6 +102,14 @@ body .comment-section {
 .comments-container .comment .comment-element .user-info .delete-edit-btn .edit-btn {
   background: none;
   border: none;
+}
+.comments-container .comment .comment-element .user-info .delete-edit-btn .delete-btn:hover,
+.comments-container .comment .comment-element .user-info .delete-edit-btn .edit-btn:hover {
+  opacity: 70%;
+}
+.comments-container .comment .comment-element .user-info .delete-edit-btn .delete-btn:active,
+.comments-container .comment .comment-element .user-info .delete-edit-btn .edit-btn:active {
+  opacity: 45%;
 }
 .comments-container .comment .comment-element .user-info .delete-edit-btn .delete-btn {
   color: hsl(358, 79%, 66%);
@@ -140,14 +158,26 @@ body .comment-section {
   width: 100%;
   outline: transparent;
   border: 1px solid hsl(223, 19%, 93%);
+  border-radius: 10px;
 }
-.currentUser-container .current-user input {
+.currentUser-container .current-user textarea:focus {
+  border: 1px solid hsl(212, 24%, 26%);
+}
+.currentUser-container .current-user .send-btn {
+  background: none;
+  border: none;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
   padding: 8px 17px;
   border: none;
   border-radius: 5px;
   background-color: hsl(238, 40%, 52%);
   color: white;
+}
+.currentUser-container .current-user .send-btn:hover {
+  opacity: 70%;
+}
+.currentUser-container .current-user .send-btn:active {
+  opacity: 45%;
 }
 
 .attribution {

@@ -9,6 +9,7 @@ $color-Light-gray: hsl(223, 19%, 93%);
 $color-Very-light-gray: hsl(228, 33%, 97%);
 
 $font-weight: 700;
+$border-radius: 10px;
 
 @mixin font-family {
   font-family: "Rubik", Arial, Helvetica, sans-serif;
@@ -17,6 +18,15 @@ $font-weight: 700;
 @mixin comments-btn-style {
   background: none;
   border: none;
+}
+
+@mixin btn-interaction {
+  &:hover {
+    opacity: 70%;
+  }
+  &:active {
+    opacity: 45%;
+  }
 }
 
 $font-size-paragraph: 16px;
@@ -63,8 +73,14 @@ body {
         align-items: center;
         margin-right: 15px;
         gap: 15px;
-        border-radius: 10px;
+        border-radius: $border-radius;
         height: 90%;
+
+        .plus-btn:hover,
+        .minus-btn:hover {
+          filter: brightness(0) saturate(100%) invert(37%) sepia(99%)
+            saturate(452%) hue-rotate(198deg) brightness(92%) contrast(102%);
+        }
       }
 
       .user-info {
@@ -104,6 +120,7 @@ body {
             color: $color-Moderate-blue;
             font-weight: 700;
             @include font-family();
+            @include btn-interaction();
 
             img {
               width: 10px;
@@ -126,6 +143,7 @@ body {
           .delete-btn,
           .edit-btn {
             @include comments-btn-style();
+            @include btn-interaction();
           }
 
           .delete-btn {
@@ -172,7 +190,7 @@ body {
     background-color: white;
     box-sizing: border-box;
     padding: 27px;
-    border-radius: 10px;
+    border-radius: $border-radius;
 
     img {
       width: 35px;
@@ -186,15 +204,23 @@ body {
       width: 100%;
       outline: transparent;
       border: 1px solid $color-Light-gray;
+      border-radius: $border-radius;
+
+      &:focus {
+        border: 1px solid $color-Dark-blue;
+      }
     }
 
-    input {
+    .send-btn {
+      @include comments-btn-style();
       @include font-family();
       padding: 8px 17px;
       border: none;
       border-radius: 5px;
       background-color: $color-Moderate-blue;
       color: white;
+
+      @include btn-interaction();
     }
   }
 }
