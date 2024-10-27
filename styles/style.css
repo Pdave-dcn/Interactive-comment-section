@@ -3,6 +3,143 @@
   padding: 0;
 }
 
+body {
+  background-color: hsl(223, 19%, 93%);
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+}
+body .comment-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: hsl(212, 24%, 26%);
+}
+
+.comments-container {
+  width: 45%;
+  margin: auto;
+  margin-top: 20px;
+}
+.comments-container .comment .comment-element {
+  display: flex;
+  background-color: white;
+  padding: 27px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.comments-container .comment .comment-element .score {
+  padding: 10px;
+  background-color: hsl(223, 19%, 93%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  gap: 15px;
+  border-radius: 10px;
+  height: 90%;
+}
+.comments-container .comment .comment-element .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.comments-container .comment .comment-element .user-info img {
+  width: 30px;
+  height: 30px;
+}
+.comments-container .comment .comment-element .user-info .username {
+  font-weight: 700;
+  color: hsl(238, 40%, 52%);
+}
+.comments-container .comment .comment-element .user-info .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.comments-container .comment .comment-element .user-info .reply-btn button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: none;
+  color: hsl(238, 40%, 52%);
+  font-weight: 700;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+}
+.comments-container .comment .comment-element .user-info .reply-btn button img {
+  width: 10px;
+  height: 10px;
+}
+.comments-container .comment .comment-element .user-info .delete-edit-btn {
+  display: flex;
+  gap: 20px;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+}
+.comments-container .comment .comment-element .user-info .delete-edit-btn button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.comments-container .comment .comment-element .user-info .delete-edit-btn .delete-btn,
+.comments-container .comment .comment-element .user-info .delete-edit-btn .edit-btn {
+  background: none;
+  border: none;
+}
+.comments-container .comment .comment-element .user-info .delete-edit-btn .delete-btn {
+  color: hsl(358, 79%, 66%);
+  font-weight: 700;
+}
+.comments-container .comment .comment-element .user-info .delete-edit-btn .edit-btn {
+  color: hsl(238, 40%, 52%);
+  font-weight: 700;
+}
+.comments-container .comment .comment-element .user-info .delete-edit-btn img {
+  width: 10px;
+  height: 10px;
+}
+.comments-container .comment .reply {
+  margin-left: 65px;
+}
+
+.currentUser-container {
+  width: 45%;
+  margin: auto;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.currentUser-container .current-user {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 15px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 27px;
+  border-radius: 10px;
+}
+.currentUser-container .current-user img {
+  width: 35px;
+  height: 35px;
+}
+.currentUser-container .current-user textarea {
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 100%;
+  outline: transparent;
+  border: 1px solid hsl(223, 19%, 93%);
+}
+.currentUser-container .current-user input {
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  padding: 8px 17px;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(238, 40%, 52%);
+  color: white;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
