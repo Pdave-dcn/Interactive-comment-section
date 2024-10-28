@@ -41,11 +41,65 @@ body {
   @include font-family();
 
   .comment-section {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: $color-Dark-blue;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+}
+
+.popup-container {
+  position: absolute;
+  top: 38%;
+  background-color: white;
+  width: 25%;
+  padding: 1.5rem;
+  border-radius: $border-radius;
+  z-index: 100;
+
+  h1 {
+    margin-bottom: 1rem;
+    color: $color-Dark-blue;
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 0.8rem;
+    color: $color-Grayish-Blue;
+  }
+
+  .no-yes-btns {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .no-btn,
+  .yes-btn {
+    flex: 1;
+    @include comments-btn-style();
+    border-radius: $border-radius;
+    padding: 0.7rem;
+    font-weight: $font-weight;
+    color: white;
+  }
+
+  .no-btn {
+    background-color: $color-Grayish-Blue;
+  }
+
+  .yes-btn {
+    background-color: $color-Soft-Red;
   }
 }
 
@@ -262,13 +316,17 @@ body {
   }
 }
 
-@media screen and (max-width: 945px) {
+@media screen and (max-width: 920px) {
   .comments-container {
     width: 70%;
   }
 
   .currentUser-container {
     width: 70%;
+  }
+
+  .popup-container {
+    width: 30%;
   }
 }
 
@@ -279,6 +337,12 @@ body {
 
   .currentUser-container {
     width: 75%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .popup-container {
+    width: 40%;
   }
 }
 
@@ -324,6 +388,12 @@ body {
 
   .currentUser-container {
     width: 95%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .popup-container {
+    width: 50%;
   }
 }
 
@@ -399,6 +469,12 @@ body {
   }
 }
 
+@media screen and (max-width: 468px) {
+  .popup-container {
+    width: 60%;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .comments-container {
     .comment {
@@ -431,5 +507,11 @@ body {
         padding-bottom: 2.19rem;
       }
     }
+  }
+}
+
+@media screen and (max-width: 391px) {
+  .popup-container {
+    width: 80%;
   }
 }

@@ -8,11 +8,59 @@ body {
   font-family: "Rubik", Arial, Helvetica, sans-serif;
 }
 body .comment-section {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: hsl(212, 24%, 26%);
+}
+body .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-container {
+  position: absolute;
+  top: 38%;
+  background-color: white;
+  width: 25%;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  z-index: 100;
+}
+.popup-container h1 {
+  margin-bottom: 1rem;
+  color: hsl(212, 24%, 26%);
+  font-weight: 500;
+}
+.popup-container p {
+  margin-bottom: 0.8rem;
+  color: hsl(211, 10%, 45%);
+}
+.popup-container .no-yes-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+.popup-container .no-btn,
+.popup-container .yes-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  border-radius: 0.625rem;
+  padding: 0.7rem;
+  font-weight: 700;
+  color: white;
+}
+.popup-container .no-btn {
+  background-color: hsl(211, 10%, 45%);
+}
+.popup-container .yes-btn {
+  background-color: hsl(358, 79%, 66%);
 }
 
 .comments-container {
@@ -213,12 +261,15 @@ body .comment-section {
     width: 65%;
   }
 }
-@media screen and (max-width: 945px) {
+@media screen and (max-width: 920px) {
   .comments-container {
     width: 70%;
   }
   .currentUser-container {
     width: 70%;
+  }
+  .popup-container {
+    width: 30%;
   }
 }
 @media screen and (max-width: 810px) {
@@ -227,6 +278,11 @@ body .comment-section {
   }
   .currentUser-container {
     width: 75%;
+  }
+}
+@media screen and (max-width: 770px) {
+  .popup-container {
+    width: 40%;
   }
 }
 @media screen and (max-width: 760px) {
@@ -262,6 +318,11 @@ body .comment-section {
   }
   .currentUser-container {
     width: 95%;
+  }
+}
+@media screen and (max-width: 580px) {
+  .popup-container {
+    width: 50%;
   }
 }
 @media screen and (max-width: 565px) {
@@ -317,6 +378,11 @@ body .comment-section {
     margin-bottom: 1.25rem;
   }
 }
+@media screen and (max-width: 468px) {
+  .popup-container {
+    width: 60%;
+  }
+}
 @media screen and (max-width: 400px) {
   .comments-container .comment .comment-element .score {
     padding: 1.3rem;
@@ -338,5 +404,10 @@ body .comment-section {
   .currentUser-container .current-user textarea {
     margin-bottom: 4.95rem;
     padding-bottom: 2.19rem;
+  }
+}
+@media screen and (max-width: 391px) {
+  .popup-container {
+    width: 80%;
   }
 }/*# sourceMappingURL=style.css.map */
