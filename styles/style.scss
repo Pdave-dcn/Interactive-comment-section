@@ -9,7 +9,7 @@ $color-Light-gray: hsl(223, 19%, 93%);
 $color-Very-light-gray: hsl(228, 33%, 97%);
 
 $font-weight: 700;
-$border-radius: 10px;
+$border-radius: 0.625rem;
 
 @mixin font-family {
   font-family: "Rubik", Arial, Helvetica, sans-serif;
@@ -52,18 +52,18 @@ body {
 .comments-container {
   width: 50%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 
   .comment {
     .comment-element {
       display: flex;
       background-color: white;
-      padding: 27px;
-      margin-bottom: 20px;
-      border-radius: 10px;
+      padding: 1.69rem;
+      margin-bottom: 1.25rem;
+      border-radius: $border-radius;
 
       .score {
-        padding: 10px;
+        padding: 0.625rem;
         background-color: $color-Light-gray;
         color: $color-Moderate-blue;
         font-weight: 500;
@@ -71,8 +71,8 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-right: 15px;
-        gap: 15px;
+        margin-right: 0.94rem;
+        gap: 0.94rem;
         border-radius: $border-radius;
         height: 90%;
 
@@ -87,12 +87,11 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 12px;
+        margin-bottom: 0.75rem;
 
         img {
-          width: 30px;
-          height: 30px;
-          //margin-right: 15px;
+          width: 1.89rem;
+          height: 1.89rem;
         }
 
         .username {
@@ -102,20 +101,20 @@ body {
         .wrapper {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 0.625rem;
         }
 
         .user-id {
           color: white;
           background-color: $color-Moderate-blue;
-          padding: 0 7px;
+          padding: 0 0.44rem;
         }
 
         .reply-btn {
           button {
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 0.44rem;
             @include comments-btn-style();
             color: $color-Moderate-blue;
             font-weight: 700;
@@ -123,21 +122,21 @@ body {
             @include btn-interaction();
 
             img {
-              width: 10px;
-              height: 10px;
+              width: 0.625rem;
+              height: 0.625rem;
             }
           }
         }
 
         .delete-edit-btn {
           display: flex;
-          gap: 20px;
+          gap: 1.25rem;
           @include font-family();
 
           button {
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 0.44rem;
           }
 
           .delete-btn,
@@ -156,15 +155,15 @@ body {
           }
 
           img {
-            width: 10px;
-            height: 10px;
+            width: 0.625rem;
+            height: 0.625rem;
           }
         }
       }
     }
 
     .reply {
-      margin-left: 65px;
+      margin-left: 4.1rem;
 
       .comment-content {
         .reply-to {
@@ -177,46 +176,46 @@ body {
 }
 
 .currentUser-container {
-  width: 45%;
+  width: 50%;
   margin: auto;
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 
   .current-user {
     display: flex;
     align-items: flex-start;
     width: 100%;
-    gap: 15px;
+    gap: 0.94rem;
     background-color: white;
     box-sizing: border-box;
-    padding: 27px;
+    padding: 1.69rem;
     border-radius: $border-radius;
 
     img {
-      width: 35px;
-      height: 35px;
+      width: 2.19rem;
+      height: 2.19rem;
     }
 
     textarea {
       @include font-family();
       box-sizing: border-box;
-      padding: 20px;
+      padding: 1.25rem;
       width: 100%;
       outline: transparent;
-      border: 1px solid $color-Light-gray;
+      border: 0.0625rem solid $color-Light-gray;
       border-radius: $border-radius;
 
       &:focus {
-        border: 1px solid $color-Dark-blue;
+        border: 0.0625rem solid $color-Dark-blue;
       }
     }
 
     .send-btn {
       @include comments-btn-style();
       @include font-family();
-      padding: 8px 17px;
+      padding: 0.5rem 1.0625rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 0.316rem;
       background-color: $color-Moderate-blue;
       color: white;
 
@@ -231,4 +230,206 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 1115px) {
+  .comments-container {
+    width: 55%;
+  }
+
+  .currentUser-container {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 1015px) {
+  .comments-container {
+    width: 60%;
+  }
+
+  .currentUser-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 945px) {
+  .comments-container {
+    width: 65%;
+  }
+
+  .currentUser-container {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 945px) {
+  .comments-container {
+    width: 70%;
+  }
+
+  .currentUser-container {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .comments-container {
+    width: 75%;
+  }
+
+  .currentUser-container {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .comments-container {
+    width: 80%;
+  }
+
+  .currentUser-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .comments-container {
+    width: 85%;
+  }
+
+  .currentUser-container {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .comments-container {
+    width: 90%;
+  }
+
+  .currentUser-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 627px) {
+  .comments-container {
+    width: 95%;
+    .comment {
+      .reply {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  .currentUser-container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .comments-container {
+    width: 95%;
+    .comment {
+      .reply {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .currentUser-container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .comments-container {
+    font-size: 0.9rem;
+    .comment {
+      .comment-element {
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+
+  .currentUser-container {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .comments-container {
+    .comment {
+      .comment-element {
+        position: relative;
+        padding-bottom: 2.5rem;
+
+        .user-info {
+          .reply-btn {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.812rem;
+          }
+
+          .delete-edit-btn {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.812rem;
+          }
+        }
+
+        .score {
+          position: absolute;
+          bottom: 8px;
+          left: 29px;
+          display: flex;
+          flex-direction: row;
+          padding: 1rem;
+          margin-right: 0;
+          width: 10%;
+          gap: 1rem;
+          height: 0;
+        }
+
+        .comment-content {
+          margin-bottom: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .comments-container {
+    .comment {
+      .comment-element {
+        .score {
+          padding: 1.3rem;
+        }
+      }
+    }
+  }
+
+  .currentUser-container {
+    position: relative;
+    .current-user {
+      img {
+        position: absolute;
+        bottom: 1.25rem;
+        left: 1.812rem;
+      }
+
+      .send-btn {
+        position: absolute;
+        padding: 1rem 1.56rem;
+        bottom: 1rem;
+        right: 1.812rem;
+      }
+
+      textarea {
+        margin-bottom: 4.95rem;
+        padding-bottom: 2.19rem;
+      }
+    }
+  }
 }
