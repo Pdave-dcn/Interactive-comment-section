@@ -163,7 +163,8 @@ body .overlay:active {
   border-radius: 0.625rem;
   height: 4.1rem;
 }
-.comments-container .comment .comment-element .score .score-btn {
+.comments-container .comment .comment-element .score .score-btn-plus,
+.comments-container .comment .comment-element .score .score-btn-minus {
   background: none;
   border: none;
 }
@@ -397,8 +398,11 @@ body .overlay:active {
   .comments-container {
     width: 95%;
   }
-  .comments-container .comment .reply {
+  .comments-container .comment .replies-container .reply {
     margin-left: 2rem;
+  }
+  .comments-container .comment .replies-container .reply .reply {
+    margin-left: 0;
   }
   .currentUser-container {
     width: 95%;
@@ -413,8 +417,11 @@ body .overlay:active {
   .comments-container {
     width: 95%;
   }
-  .comments-container .comment .reply {
+  .comments-container .comment .replies-container .reply {
     margin-left: 1rem;
+  }
+  .comments-container .comment .replies-container .reply .reply {
+    margin-left: 0;
   }
   .currentUser-container {
     width: 95%;
@@ -460,6 +467,9 @@ body .overlay:active {
     width: 10%;
     gap: 1rem;
     height: 0;
+  }
+  .comments-container .comment .comment-element .score .score-btn-minus {
+    margin-bottom: 4.5px;
   }
   .comments-container .comment .comment-element .comment-content {
     margin-bottom: 1.25rem;

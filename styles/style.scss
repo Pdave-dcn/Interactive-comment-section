@@ -213,7 +213,8 @@ body {
         border-radius: $border-radius;
         height: 4.1rem;
 
-        .score-btn {
+        .score-btn-plus,
+        .score-btn-minus {
           @include comments-btn-style();
         }
 
@@ -435,8 +436,14 @@ body {
   .comments-container {
     width: 95%;
     .comment {
-      .reply {
-        margin-left: 2rem;
+      .replies-container {
+        .reply {
+          margin-left: 2rem;
+
+          .reply {
+            margin-left: 0;
+          }
+        }
       }
     }
   }
@@ -456,8 +463,14 @@ body {
   .comments-container {
     width: 95%;
     .comment {
-      .reply {
-        margin-left: 1rem;
+      .replies-container {
+        .reply {
+          margin-left: 1rem;
+
+          .reply {
+            margin-left: 0;
+          }
+        }
       }
     }
   }
@@ -513,11 +526,17 @@ body {
           left: 29px;
           display: flex;
           flex-direction: row;
+          //justify-content: center;
+          //align-items: center;
           padding: 1rem;
           margin-right: 0;
           width: 10%;
           gap: 1rem;
           height: 0;
+
+          .score-btn-minus {
+            margin-bottom: 4.5px;
+          }
         }
 
         .comment-content {
