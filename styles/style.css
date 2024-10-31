@@ -79,6 +79,62 @@ body .overlay:active {
   margin: auto;
   margin-top: 1.25rem;
 }
+.comments-container .comment .reply-box {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0.94rem;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1.69rem;
+  border-radius: 0.625rem;
+  margin-bottom: 1.25rem;
+  margin-top: -8px;
+}
+.comments-container .comment .reply-box img {
+  width: 2.19rem;
+  height: 2.19rem;
+}
+.comments-container .comment .reply-box textarea {
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 1.25rem;
+  width: 100%;
+  outline: transparent;
+  border: 0.0625rem solid hsl(223, 19%, 93%);
+  border-radius: 0.625rem;
+}
+.comments-container .comment .reply-box textarea:focus {
+  border: 0.0625rem solid hsl(212, 24%, 26%);
+}
+.comments-container .comment .reply-box .send-btn,
+.comments-container .comment .reply-box .send-reply-btn {
+  background: none;
+  border: none;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  padding: 0.5rem 1.0625rem;
+  border: none;
+  border-radius: 0.316rem;
+  background-color: hsl(238, 40%, 52%);
+  color: white;
+}
+.comments-container .comment .reply-box .send-btn:hover,
+.comments-container .comment .reply-box .send-reply-btn:hover {
+  opacity: 70%;
+}
+.comments-container .comment .reply-box .send-btn:active,
+.comments-container .comment .reply-box .send-reply-btn:active {
+  opacity: 45%;
+}
+.comments-container .comment .reply-box .current-user-reply {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0.94rem;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 0.625rem;
+}
 .comments-container .comment .comment-element {
   display: flex;
   background-color: white;
@@ -86,8 +142,15 @@ body .overlay:active {
   margin-bottom: 1.25rem;
   border-radius: 0.625rem;
 }
+.comments-container .comment .comment-element .wrapper-element {
+  flex-grow: 1;
+}
+.comments-container .comment .comment-element .reply-to {
+  color: hsl(238, 40%, 52%);
+  font-weight: 700;
+}
 .comments-container .comment .comment-element .score {
-  padding: 0.625rem;
+  padding: 15px 10px;
   background-color: hsl(223, 19%, 93%);
   color: hsl(238, 40%, 52%);
   font-weight: 500;
@@ -98,7 +161,11 @@ body .overlay:active {
   margin-right: 0.94rem;
   gap: 0.94rem;
   border-radius: 0.625rem;
-  height: 90%;
+  height: 4.1rem;
+}
+.comments-container .comment .comment-element .score .score-btn {
+  background: none;
+  border: none;
 }
 .comments-container .comment .comment-element .score .plus-btn:hover,
 .comments-container .comment .comment-element .score .minus-btn:hover {
@@ -182,10 +249,13 @@ body .overlay:active {
   width: 0.625rem;
   height: 0.625rem;
 }
-.comments-container .comment .reply {
+.comments-container .comment .replies-container .reply {
   margin-left: 4.1rem;
 }
-.comments-container .comment .reply .comment-content .reply-to {
+.comments-container .comment .replies-container .reply .reply {
+  margin-left: 0;
+}
+.comments-container .comment .replies-container .comment-content .reply-to {
   color: hsl(238, 40%, 52%);
   font-weight: 700;
 }
@@ -222,7 +292,8 @@ body .overlay:active {
 .currentUser-container .current-user textarea:focus {
   border: 0.0625rem solid hsl(212, 24%, 26%);
 }
-.currentUser-container .current-user .send-btn {
+.currentUser-container .current-user .send-btn,
+.currentUser-container .current-user .send-reply-btn {
   background: none;
   border: none;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
@@ -232,10 +303,12 @@ body .overlay:active {
   background-color: hsl(238, 40%, 52%);
   color: white;
 }
-.currentUser-container .current-user .send-btn:hover {
+.currentUser-container .current-user .send-btn:hover,
+.currentUser-container .current-user .send-reply-btn:hover {
   opacity: 70%;
 }
-.currentUser-container .current-user .send-btn:active {
+.currentUser-container .current-user .send-btn:active,
+.currentUser-container .current-user .send-reply-btn:active {
   opacity: 45%;
 }
 
@@ -398,6 +471,25 @@ body .overlay:active {
   }
 }
 @media screen and (max-width: 400px) {
+  .comments-container .comment .reply-box {
+    position: relative;
+    padding-bottom: 1rem;
+  }
+  .comments-container .comment .reply-box .current-user-reply img {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 1.812rem;
+  }
+  .comments-container .comment .reply-box .current-user-reply .send-reply-btn {
+    position: absolute;
+    padding: 1rem 1.56rem;
+    bottom: 2.5rem;
+    right: 1.812rem;
+  }
+  .comments-container .comment .reply-box .current-user-reply textarea {
+    margin-bottom: 4.95rem;
+    padding-bottom: 2.19rem;
+  }
   .comments-container .comment .comment-element .score {
     padding: 1.3rem;
   }
@@ -423,5 +515,10 @@ body .overlay:active {
 @media screen and (max-width: 391px) {
   .popup-container {
     width: 80%;
+  }
+}
+@media screen and (max-width: 341px) {
+  .comments-container .comment .reply {
+    margin-left: 0.8rem;
   }
 }/*# sourceMappingURL=style.css.map */
