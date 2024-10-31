@@ -3,8 +3,8 @@ import {
   createCommentElement,
   displayUser,
   displayComments,
-  displayReplyBox,
-} from "./fonctions.js";
+} from "./functions/generate-first-data-functions.js";
+import { displayReplyBox } from "./functions/generate-new-data-functions.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   displayComments().then(() => {
@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .querySelectorAll(".js-reply-btn")
       .forEach((replyBtn) => {
         replyBtn.addEventListener("click", () => {
-          //const commentId = user.dataset.commentId;
-          //console.log(commentId);
           displayReplyBox(replyBtn);
         });
       });
