@@ -1,4 +1,4 @@
-export async function getData() {
+async function getData() {
   try {
     const response = await fetch("data/data.json");
 
@@ -10,7 +10,7 @@ export async function getData() {
   }
 }
 
-export function createCommentElement(comment, username) {
+function createCommentElement(comment, username) {
   const commentElement = document.createElement("div");
   commentElement.classList.add("comment");
 
@@ -85,7 +85,7 @@ export function createCommentElement(comment, username) {
   return commentElement;
 }
 
-export function displayUser(userData) {
+function displayUser(userData) {
   const userElement = document.querySelector(".js-currentUser-container");
 
   userElement.innerHTML = `

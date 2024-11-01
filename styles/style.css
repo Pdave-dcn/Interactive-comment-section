@@ -26,7 +26,7 @@ body .overlay {
   opacity: 0;
   transition: opacity 300ms ease;
 }
-body .overlay:active {
+body .overlay.active {
   opacity: 1;
   visibility: visible;
 }
@@ -41,7 +41,7 @@ body .overlay:active {
   z-index: 100;
   display: none;
 }
-.popup-container:active {
+.popup-container.active {
   display: block;
 }
 .popup-container h1 {

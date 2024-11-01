@@ -1,6 +1,6 @@
 import { getData } from "./generate-first-data-functions.js";
 
-export function renderUserCommentHTML(data, commentContent, commentElement) {
+function renderUserCommentHTML(data, commentContent, commentElement) {
   const html = `<div class="comment-element">
     <div class="score">
           <button type="button" class="score-btn-plus js-plus-btn">
@@ -158,5 +158,4 @@ export async function createCurrentUserComment() {
   document.querySelector(".js-comments-container").appendChild(commentElement);
 
   document.getElementById("user-comment-input").value = "";
-  //Use renderUserHTML() here for user comment rendering.
 }

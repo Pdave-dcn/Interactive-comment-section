@@ -1,14 +1,9 @@
-import {
-  getData,
-  createCommentElement,
-  displayUser,
-  displayComments,
-} from "./functions/generate-first-data-functions.js";
+import { displayComments } from "./functions/generate-first-data-functions.js";
 import {
   displayReplyBox,
   createCurrentUserComment,
-  renderUserCommentHTML,
 } from "./functions/generate-new-data-functions.js";
+import { showPopup } from "./functions/score-delete-edit-functions.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   displayComments().then(() => {
@@ -20,6 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector(".send-btn").addEventListener("click", () => {
       createCurrentUserComment();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (event.target.closest(".delete-btn")) {
+        showPopup(event.target.closest(".delete-btn"));
+      }
     });
   });
 });
