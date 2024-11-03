@@ -147,9 +147,11 @@ export async function createCurrentUserComment() {
               </div>
             </div>
           </div>
+          <div class="elements-wrapper js-elements-wrapper">
           <p class="comment-content">
             ${userCommentContent}
           </p>
+          </div>
         </div>
   `;
 

@@ -47,7 +47,8 @@ $border-radius: 0.625rem;
   textarea {
     @include font-family();
     box-sizing: border-box;
-    padding: 1.25rem;
+    padding: 10px;
+    height: 70px;
     width: 100%;
     outline: transparent;
     border: 0.0625rem solid $color-Light-gray;
@@ -63,7 +64,6 @@ $border-radius: 0.625rem;
     @include comments-btn-style();
     @include font-family();
     padding: 0.5rem 1.0625rem;
-    border: none;
     border-radius: 0.316rem;
     background-color: $color-Moderate-blue;
     color: white;
@@ -75,6 +75,37 @@ $border-radius: 0.625rem;
 @mixin reply-to-style {
   color: $color-Moderate-blue;
   font-weight: $font-weight;
+}
+
+@mixin update-comment-style {
+  .update-btn {
+    width: auto;
+    align-self: flex-end;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    background-color: $color-Moderate-blue;
+    color: white;
+    border-radius: $border-radius;
+    padding: 10px 17px;
+    border: none;
+    @include btn-interaction();
+  }
+
+  textarea {
+    padding: 10px;
+    border-radius: $border-radius;
+    border: 1px solid $color-Very-light-gray;
+    outline: transparent;
+    @include font-family();
+    font-size: 1rem;
+    color: $color-Dark-blue;
+    height: 80px;
+    resize: vertical;
+
+    &:focus {
+      border: 1px solid $color-Dark-blue;
+    }
+  }
 }
 
 * {
@@ -192,7 +223,20 @@ body {
       border-radius: $border-radius;
 
       .wrapper-element {
+        display: flex;
+        flex-direction: column;
+
         flex-grow: 1;
+
+        @include update-comment-style();
+      }
+
+      .elements-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        @include update-comment-style();
       }
 
       .reply-to {
@@ -244,7 +288,6 @@ body {
           display: flex;
           align-items: center;
           gap: 0.625rem;
-          //margin-right: 2.5em;
         }
 
         .user-id {
@@ -526,8 +569,6 @@ body {
           left: 29px;
           display: flex;
           flex-direction: row;
-          //justify-content: center;
-          //align-items: center;
           padding: 1rem;
           margin-right: 0;
           width: 10%;
@@ -576,6 +617,7 @@ body {
           textarea {
             margin-bottom: 4.95rem;
             padding-bottom: 2.19rem;
+            resize: vertical;
           }
         }
       }
@@ -605,7 +647,8 @@ body {
 
       textarea {
         margin-bottom: 4.95rem;
-        padding-bottom: 2.19rem;
+        padding-bottom: 10px;
+        height: 50px;
       }
     }
   }

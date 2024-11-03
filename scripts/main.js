@@ -3,7 +3,10 @@ import {
   displayReplyBox,
   createCurrentUserComment,
 } from "./functions/generate-new-data-functions.js";
-import { showPopup } from "./functions/score-delete-edit-functions.js";
+import {
+  showPopup,
+  editUserComment,
+} from "./functions/score-delete-edit-functions.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   displayComments().then(() => {
@@ -20,6 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", (event) => {
       if (event.target.closest(".delete-btn")) {
         showPopup(event.target.closest(".delete-btn"));
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (event.target.closest(".edit-btn")) {
+        editUserComment(event.target.closest(".edit-btn"));
       }
     });
   });

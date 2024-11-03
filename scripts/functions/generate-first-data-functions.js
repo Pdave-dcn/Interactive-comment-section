@@ -1,4 +1,4 @@
-async function getData() {
+export async function getData() {
   try {
     const response = await fetch("data/data.json");
 
@@ -29,7 +29,7 @@ function createCommentElement(comment, username) {
   `
     : `
   <div class="reply-btn">
-    <button type="button" class="js-reply-btn" data-comment-id="${comment.id}">
+    <button type="button" class="js-reply-btn">
       <img src="images/icon-reply.svg" alt="icon reply" />
       Reply
     </button>
@@ -52,6 +52,7 @@ function createCommentElement(comment, username) {
   const content = comment.replyingTo
     ? `
   <span class="reply-to">@${comment.replyingTo}</span> ${comment.content}
+
   `
     : `
   ${comment.content}
@@ -68,7 +69,7 @@ function createCommentElement(comment, username) {
         <img class="minus-btn" src="images/icon-minus.svg" alt="icon-minus" />
       </button>
     </div>
-    <div>
+    <div class="elements-wrapper js-elements-wrapper">
       <div class="user-info">
         <div class="wrapper">
           ${userId}

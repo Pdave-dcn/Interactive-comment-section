@@ -98,7 +98,8 @@ body .overlay.active {
 .comments-container .comment .reply-box textarea {
   font-family: "Rubik", Arial, Helvetica, sans-serif;
   box-sizing: border-box;
-  padding: 1.25rem;
+  padding: 10px;
+  height: 70px;
   width: 100%;
   outline: transparent;
   border: 0.0625rem solid hsl(223, 19%, 93%);
@@ -113,7 +114,6 @@ body .overlay.active {
   border: none;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
   padding: 0.5rem 1.0625rem;
-  border: none;
   border-radius: 0.316rem;
   background-color: hsl(238, 40%, 52%);
   color: white;
@@ -143,7 +143,76 @@ body .overlay.active {
   border-radius: 0.625rem;
 }
 .comments-container .comment .comment-element .wrapper-element {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
+}
+.comments-container .comment .comment-element .wrapper-element .update-btn {
+  width: auto;
+  align-self: flex-end;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  background-color: hsl(238, 40%, 52%);
+  color: white;
+  border-radius: 0.625rem;
+  padding: 10px 17px;
+  border: none;
+}
+.comments-container .comment .comment-element .wrapper-element .update-btn:hover {
+  opacity: 70%;
+}
+.comments-container .comment .comment-element .wrapper-element .update-btn:active {
+  opacity: 45%;
+}
+.comments-container .comment .comment-element .wrapper-element textarea {
+  padding: 10px;
+  border-radius: 0.625rem;
+  border: 1px solid hsl(228, 33%, 97%);
+  outline: transparent;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: hsl(212, 24%, 26%);
+  height: 80px;
+  resize: vertical;
+}
+.comments-container .comment .comment-element .wrapper-element textarea:focus {
+  border: 1px solid hsl(212, 24%, 26%);
+}
+.comments-container .comment .comment-element .elements-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.comments-container .comment .comment-element .elements-wrapper .update-btn {
+  width: auto;
+  align-self: flex-end;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  background-color: hsl(238, 40%, 52%);
+  color: white;
+  border-radius: 0.625rem;
+  padding: 10px 17px;
+  border: none;
+}
+.comments-container .comment .comment-element .elements-wrapper .update-btn:hover {
+  opacity: 70%;
+}
+.comments-container .comment .comment-element .elements-wrapper .update-btn:active {
+  opacity: 45%;
+}
+.comments-container .comment .comment-element .elements-wrapper textarea {
+  padding: 10px;
+  border-radius: 0.625rem;
+  border: 1px solid hsl(228, 33%, 97%);
+  outline: transparent;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: hsl(212, 24%, 26%);
+  height: 80px;
+  resize: vertical;
+}
+.comments-container .comment .comment-element .elements-wrapper textarea:focus {
+  border: 1px solid hsl(212, 24%, 26%);
 }
 .comments-container .comment .comment-element .reply-to {
   color: hsl(238, 40%, 52%);
@@ -284,7 +353,8 @@ body .overlay.active {
 .currentUser-container .current-user textarea {
   font-family: "Rubik", Arial, Helvetica, sans-serif;
   box-sizing: border-box;
-  padding: 1.25rem;
+  padding: 10px;
+  height: 70px;
   width: 100%;
   outline: transparent;
   border: 0.0625rem solid hsl(223, 19%, 93%);
@@ -299,7 +369,6 @@ body .overlay.active {
   border: none;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
   padding: 0.5rem 1.0625rem;
-  border: none;
   border-radius: 0.316rem;
   background-color: hsl(238, 40%, 52%);
   color: white;
@@ -499,6 +568,7 @@ body .overlay.active {
   .comments-container .comment .reply-box .current-user-reply textarea {
     margin-bottom: 4.95rem;
     padding-bottom: 2.19rem;
+    resize: vertical;
   }
   .comments-container .comment .comment-element .score {
     padding: 1.3rem;
@@ -519,7 +589,8 @@ body .overlay.active {
   }
   .currentUser-container .current-user textarea {
     margin-bottom: 4.95rem;
-    padding-bottom: 2.19rem;
+    padding-bottom: 10px;
+    height: 50px;
   }
 }
 @media screen and (max-width: 391px) {
