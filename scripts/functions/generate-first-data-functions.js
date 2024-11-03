@@ -64,7 +64,7 @@ function createCommentElement(comment, username) {
       <button type="button" class="score-btn-plus js-plus-btn">
         <img class="plus-btn" src="images/icon-plus.svg" alt="icon-plus" />
       </button>
-      <span>${comment.score}</span>
+      <span class="score-value">${comment.score}</span>
       <button type="button" class="score-btn-minus js-minus-btn">
         <img class="minus-btn" src="images/icon-minus.svg" alt="icon-minus" />
       </button>

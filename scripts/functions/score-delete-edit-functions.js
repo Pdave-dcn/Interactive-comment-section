@@ -121,3 +121,26 @@ function editAndUpdateComment(container, text) {
     updateButton.remove();
   };
 }
+
+export function increaseScore(plusBtn) {
+  const scoreContainer = plusBtn.closest(".score");
+  const childrenElement = scoreContainer.children[1];
+  let scoreValue = Number(childrenElement.innerText);
+
+  scoreValue++;
+
+  childrenElement.innerText = scoreValue;
+}
+
+export function decreaseScore(minusBtn) {
+  const scoreContainer = minusBtn.closest(".score");
+  const childrenElement = scoreContainer.children[1];
+  let scoreValue = Number(childrenElement.innerText);
+
+  if (scoreValue === 0) {
+    scoreValue = 0;
+  } else {
+    scoreValue--;
+    childrenElement.innerText = scoreValue;
+  }
+}

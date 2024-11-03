@@ -6,6 +6,8 @@ import {
 import {
   showPopup,
   editUserComment,
+  increaseScore,
+  decreaseScore,
 } from "./functions/score-delete-edit-functions.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,6 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", (event) => {
       if (event.target.closest(".edit-btn")) {
         editUserComment(event.target.closest(".edit-btn"));
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        event.target.closest(".plus-btn") ||
+        event.target.closest(".minus-btn")
+      ) {
+        if (event.target.closest(".plus-btn")) {
+          increaseScore(event.target.closest(".plus-btn"));
+        } else {
+          decreaseScore(event.target.closest(".minus-btn"));
+        }
       }
     });
   });
