@@ -75,6 +75,22 @@ export function editUserComment(editButton) {
 }
 
 function editAndUpdateComment(container, text) {
+  const existingEdittingBox = document.querySelector(".edit-comment");
+  const existingUpdateBtn = document.querySelector(".update-btn");
+  if (existingEdittingBox && existingUpdateBtn) {
+    const originalContent = existingEdittingBox.dataset.originalContent;
+    const commentContainer = existingEdittingBox.parentNode;
+    existingEdittingBox.remove();
+    existingUpdateBtn.remove();
+
+    if (originalContent) {
+      const restoredComment = document.createElement("p");
+      restoredComment.classList.add("comment-content");
+      restoredComment.innerHTML = originalContent;
+      commentContainer.appendChild(restoredComment);
+    }
+  }
+
   const commentContentElement = container.querySelector(".comment-content");
 
   const replyToElement = commentContentElement.querySelector(".reply-to");
@@ -83,10 +99,12 @@ function editAndUpdateComment(container, text) {
   const mainCommentText = text.replace(replyToText, "").trim();
 
   const originalComment = commentContentElement.cloneNode(true);
+  const originalContentHTML = originalComment.innerHTML;
 
   const textarea = document.createElement("textarea");
   textarea.value = mainCommentText;
   textarea.classList.add("edit-comment");
+  textarea.dataset.originalContent = originalContentHTML;
 
   commentContentElement.replaceWith(textarea);
 
