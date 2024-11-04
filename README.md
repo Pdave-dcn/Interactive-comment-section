@@ -1,106 +1,79 @@
-# Frontend Mentor - Interactive comments section
+# Comment and Reply System
 
-![Design preview for the Interactive comments section coding challenge](./design/desktop-preview.jpg)
+This project provides a web-based comment and reply interface that allows users to add, edit, reply to, and delete comments. It also includes a basic scoring system where users can upvote or downvote comments. The project is written in JavaScript and relies on `fetch` to retrieve data from a JSON file, with asynchronous functions for data fetching, handling, and updating.
 
-## Welcome! 👋
+## Table of Contents
 
-Thanks for checking out this front-end coding challenge.
+- [Features](#features)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Code Structure](#code-structure)
+- [Key Functions](#key-functions)
+- [Contributing](#contributing)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Features
 
-**To do this challenge, you need a strong understanding of HTML, CSS and JavaScript.**
+- **Add Comments:** Users can submit a new comment.
+- **Reply to Comments:** Users can reply to existing comments.
+- **Edit Comments:** Users can edit their own comments.
+- **Delete Comments:** Users can delete comments after confirming through a popup.
+- **Scoring System:** Upvote or downvote comments.
+- **Dynamic Timestamps:** Comments show dynamically updated timestamps.
 
-## The challenge
+## Setup
 
-Your challenge is to build out this interactive comments section and get it looking as close to the design as possible.
+1. Clone this repository to your local machine.
+2. Place `data/data.json` containing initial data into the appropriate directory.
+3. Ensure the images (e.g., `icon-delete.svg`, `icon-reply.svg`, etc.) are located in an `images/` folder.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+To view the project, open the HTML file in a browser or set up a local server if necessary.
 
-We provide the data in a local `data.json` file, so use that to populate the content on the first load. If you want to take it up a notch, feel free to build this as a full-stack CRUD application!
+## Usage
 
-Your users should be able to:
+1. **Add Comment**: Enter text in the input box provided for a new comment, then click "SEND."
+2. **Reply to Comment**: Click "Reply" under any comment to open a reply box directly under it.
+3. **Edit Comment**: Click "Edit" to modify your own comments.
+4. **Delete Comment**: Click "Delete" and confirm deletion in the popup.
+5. **Upvote/Downvote**: Use the plus and minus buttons to adjust the score.
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Create, Read, Update, and Delete comments and replies
-- Upvote and downvote comments
-- **Bonus**: If you're building a purely front-end project, use `localStorage` to save the current state in the browser that persists when the browser is refreshed.
-- **Bonus**: Instead of using the `createdAt` strings from the `data.json` file, try using timestamps and dynamically track the time since the comment or reply was posted.
+## Code Structure
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+The project uses modular JavaScript, separating key functions into dedicated files for better maintainability.
 
-### Expected behaviour
+- **`generate-first-data-functions.js`**: Contains data-fetching functions.
+- **`generate-new-data-functions.js`**: Handles dynamic data updates.
+- **`score-delete-edit-functions.js`**: Manages scoring, deletion, and editing logic.
 
-- First-level comments should be ordered by their score, whereas nested replies are ordered by time added.
-- Replying to a comment adds the new reply to the bottom of the nested replies within that comment.
-- A confirmation modal should pop up before a comment or reply is deleted.
-- Adding a new comment or reply uses the `currentUser` object from within the `data.json` file.
-- You can only edit or delete your own comments and replies.
+### Important HTML Structure
 
-## Where to find everything
+- **Comment Structure**: Main comment is a `.comment` div with nested `.reply` divs for replies.
+- **Score and Buttons**: Each comment includes a scoring section with buttons for upvoting and downvoting.
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+## Key Functions
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Display Functions
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- **`displayComments`**: Fetches initial comments from `data.json` and renders them.
+- **`displayUser`**: Displays the current user's information.
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### Action Functions
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- **`createCurrentUserComment`**: Adds a new comment from the current user.
+- **`displayReplyBox`**: Renders a reply box directly below the comment being replied to.
+- **`editUserComment`**: Allows the user to edit their own comments in place.
 
-## Building your project
+### Popup Management
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+- **`showPopup`**: Displays a confirmation popup before deleting.
+- **`deleteComment`**: Deletes a comment or reply based on user confirmation.
+- **`closePopup`**: Closes the confirmation popup.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+### Scoring Functions
 
-## Deploying your project
+- **`increaseScore`**: Increases the score of a comment.
+- **`decreaseScore`**: Decreases the score of a comment, with a minimum score of 0.
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+### Utility Functions
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- **`updatePostdates`**: Updates timestamps every 60 seconds to show relative time.
+- **`formatTimePassed`**: Formats time difference into readable text, e.g., "just now" or "3 minutes ago."
