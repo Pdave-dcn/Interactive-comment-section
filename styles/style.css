@@ -67,6 +67,14 @@ body .overlay.active {
   font-weight: 700;
   color: white;
 }
+.popup-container .no-btn:hover,
+.popup-container .yes-btn:hover {
+  opacity: 70%;
+}
+.popup-container .no-btn:active,
+.popup-container .yes-btn:active {
+  opacity: 45%;
+}
 .popup-container .no-btn {
   background-color: hsl(211, 10%, 45%);
 }

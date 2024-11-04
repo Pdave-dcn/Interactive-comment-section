@@ -2,6 +2,7 @@ import { displayComments } from "./functions/generate-first-data-functions.js";
 import {
   displayReplyBox,
   createCurrentUserComment,
+  updatePostdates,
 } from "./functions/generate-new-data-functions.js";
 import {
   showPopup,
@@ -46,5 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
+
+    setInterval(updatePostdates, 60000);
   });
 });

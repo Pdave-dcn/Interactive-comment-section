@@ -1,6 +1,11 @@
 import { getData } from "./generate-first-data-functions.js";
 
-function renderUserCommentHTML(data, commentContent, commentElement) {
+function renderUserCommentHTML(
+  data,
+  commentContent,
+  commentElement,
+  timeStamp = Date.now()
+) {
   const html = `<div class="comment-element">
     <div class="score">
           <button type="button" class="score-btn-plus js-plus-btn">
@@ -19,7 +24,7 @@ function renderUserCommentHTML(data, commentContent, commentElement) {
   }" />
               <span class="username">${data.currentUser.username}</span>
               <span class="user-id">you</span>
-              <span>just now</span>
+              <span class="post-date" data-timestamp="${timeStamp}">just now</span>
             </div>
             <div class="buttons">
               <div class="delete-edit-btn">
@@ -43,6 +48,35 @@ function renderUserCommentHTML(data, commentContent, commentElement) {
    `;
 
   return html;
+}
+
+export function updatePostdates() {
+  const postDateElements = document.querySelectorAll(".post-date");
+
+  postDateElements.forEach((element) => {
+    const timeStamp = parseInt(element.getAttribute("data-timestamp"));
+    const timePassed = Date.now() - timeStamp;
+
+    element.innerText = formatTimePassed(timePassed);
+  });
+}
+
+function formatTimePassed(milliseconds) {
+  const seconds = Math.floor(milliseconds / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+
+  if (days > 0) {
+    return `${days} day${days > 1 ? "s" : ""} ago`;
+  }
+  if (hours > 0) {
+    return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+  }
+  if (minutes > 0) {
+    return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
+  }
+  return `just now`;
 }
 
 export async function displayReplyBox(replyBtn) {
@@ -106,7 +140,7 @@ export async function displayReplyBox(replyBtn) {
   });
 }
 
-export async function createCurrentUserComment() {
+export async function createCurrentUserComment(timeStamp = Date.now()) {
   const data = await getData();
 
   const commentElement = document.createElement("div");
@@ -134,7 +168,7 @@ export async function createCurrentUserComment() {
               <img src="${data.currentUser.image.png}" alt="${data.currentUser.username}" />
               <span class="username">${data.currentUser.username}</span>
               <span class="user-id">you</span>
-              <span>just now</span>
+              <span class="post-date" data-timestamp="${timeStamp}">just now</span>
             </div>
             <div class="buttons">
               <div class="delete-edit-btn">
